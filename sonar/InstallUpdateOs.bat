@@ -1,5 +1,7 @@
 @chcp 65001>nul
 
+@set LOGOS_CONFIG=logger.oscript.app.opm=ERROR;
+
 @call opm install cmdline
 @call opm install 1commands
 @call opm install v8metadata-reader
