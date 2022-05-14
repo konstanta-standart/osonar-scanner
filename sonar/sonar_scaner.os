@@ -249,9 +249,9 @@
 		Возврат;
 	КонецЕсли;
 	
-	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.revision=%CI_COMMIT_SHA%");
-	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.key=%CI_MERGE_REQUEST_IID%");
-	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.base=%CI_MERGE_REQUEST_TARGET_BRANCH_NAME%");
+	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.revision=" + ПолучитьПеременнуюСреды("CI_COMMIT_SHA"));
+	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.key=" + ПолучитьПеременнуюСреды("CI_MERGE_REQUEST_IID"));
+	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.base=" + ПолучитьПеременнуюСреды("CI_MERGE_REQUEST_TARGET_BRANCH_NAME"));
 	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.branch=" + ИмяВетки("CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"));
 	
 КонецПроцедуры
@@ -272,7 +272,7 @@
 		Возврат;
 	КонецЕсли;
 	
-	КомандаСканера.ДобавитьПараметр("-Dsonar.externalIssuesReportPaths=%GENERIC_ISSUE_JSON%");
+	КомандаСканера.ДобавитьПараметр("-Dsonar.externalIssuesReportPaths=" + ПолучитьПеременнуюСреды("GENERIC_ISSUE_JSON"));
 	
 КонецПроцедуры
 
@@ -363,7 +363,7 @@
 	// Стандартная библиотека всегда перехватывает вывод
 	
 	ПутьПриложения = Команда.ПолучитьКоманду();
-	ПутьПриложения = ОбернутьВКавычки(ПутьПриложения);
+	//ПутьПриложения = ОбернутьВКавычки(ПутьПриложения);
 	
 	СтрокаЗапуска = "";
 	
