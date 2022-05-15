@@ -1,0 +1,13 @@
+{
+    "ProjectCatalog": "K2FRESH",
+    "Sonar": {
+        "HostUrl": "http://server-test:9000",
+        "ProjectName": "Введите имя проекта для отображения в сонаре",
+        "ProjectKey": "Введите уникальный ключ проекта для сонара",
+        "EDT_Check": true,
+        "EDT_version": "2021.3.4",
+        "Debug_Scanner": false,
+        "ExternalIssuesReportSettings": ""
+    }
+
+}
