@@ -216,7 +216,7 @@ C:\Program Files\BellSoft\LibericaJDK-11-Full\bin\javaw.exe
 
 - `SONAR_TOKEN` - токен пользователя в sonar
 
-![image](.assets/2022-05-03-10-00-24.png)
+![image](sonar.assets/2022-05-03-10-00-24.png)
 
 - Можно добавить переопределяющие параметры:
   - `SONAR_HOST_URL` - адрес сервера sonar
