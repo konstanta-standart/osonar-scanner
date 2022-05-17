@@ -9,7 +9,7 @@ qa-branch:
   stage: qa
   tags:
     - windows
-    - sonar_scaner
+    - sonar_scanner
     - stebi
   except:
     - merge_requests
@@ -19,20 +19,20 @@ qa-branch:
     - develop # долгоживущие ветки. По коротким достаточно MR
   script:
     - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scaner.os"
+    - oscript ".\gitlab_ci\sonar\sonar_scanner.os"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
 
 qa-mr:
   stage: qa
   tags:
     - windows
-    - sonar_scaner
+    - sonar_scanner
     - stebi
   only:
     - merge_requests
   script:
-    -  git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scaner.os" -mr
+    - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
+    - oscript ".\gitlab_ci\sonar\sonar_scanner.os" -mr
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
 
 # Ручной запуск проверки по любой ветке
@@ -40,11 +40,11 @@ qa-branch-manual:
   stage: qa
   tags:
     - windows
-    - sonar_scaner
+    - sonar_scanner
     - stebi
   script:
-    -  git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scaner.os"
+    - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
+    - oscript ".\gitlab_ci\sonar\sonar_scanner.os"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
   when: manual
 
