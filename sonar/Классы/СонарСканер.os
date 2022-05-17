@@ -63,6 +63,7 @@
 	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.exclusions.disabled=true");
 	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.enabled=true");
 	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.provider=git");
+	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.revision=" + ПолучитьПеременнуюСреды("CI_COMMIT_SHA"));
 	
 КонецПроцедуры
 
@@ -72,7 +73,6 @@
 		Возврат;
 	КонецЕсли;
 	
-	КомандаСканера.ДобавитьПараметр("-Dsonar.scm.revision=" + ПолучитьПеременнуюСреды("CI_COMMIT_SHA"));
 	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.key=" + ПолучитьПеременнуюСреды("CI_MERGE_REQUEST_IID"));
 	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.base=" + ИмяВетки("CI_MERGE_REQUEST_TARGET_BRANCH_NAME"));
 	КомандаСканера.ДобавитьПараметр("-Dsonar.pullrequest.branch=" + ИмяВетки("CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"));
