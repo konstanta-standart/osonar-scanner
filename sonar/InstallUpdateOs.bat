@@ -5,6 +5,7 @@
 @call opm install v8metadata-reader
 @call opm install logos
 @call opm install tempfiles
+@call opm install fs
 @call opm install stebi
 
 @call opm update cmdline
@@ -12,4 +13,5 @@
 @call opm update v8metadata-reader
 @call opm update logos
 @call opm update tempfiles
+@call opm update fs
 @call opm update stebi
