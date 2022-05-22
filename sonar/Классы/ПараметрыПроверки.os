@@ -32,10 +32,7 @@
 	ProjectName = "";
 	ProjectKey = "";
 	ProjectVersion = "";
-	EDT_Check = Ложь;
 	EDT_version = "";
-	Debug_Scanner = Ложь;
-	Debug_CI = Ложь;
 	ExternalIssuesReportPaths = "";
 	ExternalIssuesReportSettings = "";
 	
@@ -272,6 +269,9 @@
 	ЗаполнитьПараметрЗначениемПоУмолчанию("projectKey", "project_" + ПолучитьПеременнуюСреды("CI_PROJECT_ID"));
 	ЗаполнитьПараметрЗначениемПоУмолчанию("projectVersion", "1.0.1.1");
 	ЗаполнитьПараметрЗначениемПоУмолчанию("EDT_version", "2021.2.6");
+	ЗаполнитьПараметрЗначениемПоУмолчанию("EDT_Check", Ложь);
+	ЗаполнитьПараметрЗначениемПоУмолчанию("Debug_Scanner", Ложь);
+	ЗаполнитьПараметрЗначениемПоУмолчанию("Debug_CI", Ложь);
 	ЗаполнитьПараметрЗначениемПоУмолчанию("ExternalIssuesReportSettings", ".\gitlab_ci\sonar\settings.json");
 	
 	Лог.Отладка("Конец.Заполнение параметров по умолчанию.");
