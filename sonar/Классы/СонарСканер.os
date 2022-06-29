@@ -92,7 +92,7 @@
 		Возврат;
 	КонецЕсли;
 	
-	КомандаСканера.ДобавитьПараметр("-Dsonar.ExternalIssuesReportPaths=" + ПараметрыПроекта.ExternalIssuesReportPaths);
+	КомандаСканера.ДобавитьПараметр("-Dsonar.externalIssuesReportPaths=" + ПараметрыПроекта.ExternalIssuesReportPaths);
 	
 КонецПроцедуры
 
