@@ -32,7 +32,10 @@
 	ProjectName = "";
 	ProjectKey = "";
 	ProjectVersion = "";
+	EDT_Check = Ложь;
 	EDT_version = "";
+	Debug_Scanner = Ложь;
+	Debug_CI = Ложь;
 	ExternalIssuesReportPaths = "";
 	ExternalIssuesReportSettings = "";
 	
