@@ -1,7 +1,7 @@
 {
-    "ProjectCatalog": "K2FRESH",
+    "ProjectCatalog": "Путь к каталогам с проектом через запятую",
     "Sonar": {
-        "HostUrl": "http://server-test:9000",
+        "HostUrl": "Адрес сонара",
         "ProjectName": "Введите имя проекта для отображения в сонаре",
         "ProjectKey": "Введите уникальный ключ проекта для сонара",
         "EDT_Check": true,
