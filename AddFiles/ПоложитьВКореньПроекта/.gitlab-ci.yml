@@ -42,7 +42,7 @@ qa-mr:
   only:
     - merge_requests
   script:
-    - osonar_scanner -mr -addRING_OPTS=xmx8g
+    - osonar_scanner -mr -addRING_OPTS "-Xmx8g"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
 
 # Ручной запуск проверки по любой ветке
@@ -59,7 +59,7 @@ qa-branch-manual:
   tags:
     - osonar_scanner
   script:
-    - osonar_scanner -addRING_OPTS=xmx8g
+    - osonar_scanner -addRING_OPTS "-Xmx8g"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
   when: manual
 
