@@ -1,3 +1,3 @@
-# Библиотека скриптов для запуска в Gitlab-CI
+# Запуск sonar-scanner в GitLab-ci для проектов 1С
 
-## [Проверка сонаром](https://gitlab.com/Konstanta/devops/-/blob/master/docs/cicd/sonar.md)
+Подробности будут позже
