@@ -1,0 +1,3 @@
+test/
+*.ospx
+.vscode/launch.json

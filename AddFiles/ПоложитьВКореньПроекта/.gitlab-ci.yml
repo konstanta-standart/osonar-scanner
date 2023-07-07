@@ -16,9 +16,7 @@ qa-branch:
       - .sonar/cache
   allow_failure: true
   tags:
-    - windows
-    - sonar_scanner
-    - stebi
+    - osonar_scanner
   except:
     - merge_requests
     - main # исключить, т.к. гоняется через jenkins
@@ -26,8 +24,7 @@ qa-branch:
   only:
     - develop # долгоживущие ветки. По коротким достаточно MR
   script:
-    - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scanner.os"
+    - osonar_scanner -addRING_OPTS=xmx8g
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
 
 qa-mr:
@@ -41,14 +38,11 @@ qa-mr:
       - .sonar/cache
   allow_failure: true
   tags:
-    - windows
-    - sonar_scanner
-    - stebi
+    - osonar_scanner
   only:
     - merge_requests
   script:
-    - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scanner.os" -mr
+    - osonar_scanner -mr -addRING_OPTS "-Xmx8g"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
 
 # Ручной запуск проверки по любой ветке
@@ -63,12 +57,9 @@ qa-branch-manual:
       - .sonar/cache
   allow_failure: true
   tags:
-    - windows
-    - sonar_scanner
-    - stebi
+    - osonar_scanner
   script:
-    - git clone "https://gitlab-ci-token:$CI_JOB_TOKEN@gitlab.com/Konstanta/common/gitlab-ci.git" .\gitlab_ci
-    - oscript ".\gitlab_ci\sonar\sonar_scanner.os"
+    - osonar_scanner -addRING_OPTS "-Xmx8g"
     - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
   when: manual
 
