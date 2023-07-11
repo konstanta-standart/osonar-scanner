@@ -24,8 +24,7 @@ qa-branch:
   only:
     - develop # долгоживущие ветки. По коротким достаточно MR
   script:
-    - osonar_scanner -addRING_OPTS=xmx8g
-    - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
+    - osonar-scanner -addRING_OPTS "-xmx8g"
 
 qa-mr:
   stage: qa
@@ -42,8 +41,7 @@ qa-mr:
   only:
     - merge_requests
   script:
-    - osonar_scanner -mr -addRING_OPTS "-Xmx8g"
-    - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
+    - osonar-scanner -mr -addRING_OPTS "-Xmx8g"
 
 # Ручной запуск проверки по любой ветке
 qa-branch-manual:
@@ -59,7 +57,6 @@ qa-branch-manual:
   tags:
     - osonar_scanner
   script:
-    - osonar_scanner -addRING_OPTS "-Xmx8g"
-    - if ($Env:DEBUG_CI -ne $true) {Remove-Item -Path .\gitlab_ci -Recurse -Force}
+    - osonar-scanner -addRING_OPTS "-Xmx8g"
   when: manual
 
